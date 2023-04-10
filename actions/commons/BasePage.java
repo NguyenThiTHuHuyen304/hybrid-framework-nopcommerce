@@ -19,6 +19,10 @@ public class BasePage {
 
 	private long longtimeout = 30;
 
+	public static BasePage getBasePageObject() {
+		return new BasePage();
+	}
+
 	// Nhiệm vụ mở 1 Url bất kì
 	public void openPageUrl(WebDriver driver, String pageUrl) {
 		driver.get(pageUrl);
