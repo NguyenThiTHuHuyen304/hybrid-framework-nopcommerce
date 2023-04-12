@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import commons.BasePage;
 
-public class Level_02_Apply_BasePage_I {
+public class Level_02_Apply_BasePage_II {
 	WebDriver driver;
 	String emailAddress;
 
@@ -28,7 +28,8 @@ public class Level_02_Apply_BasePage_I {
 		driver = new FirefoxDriver();
 
 		// Initial (Khởi tạo)
-		basePage = new BasePage();
+		// Nguyên tắc đóng gói
+		basePage = BasePage.getBasePageObject();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get("https://demo.nopcommerce.com/");
 	}
