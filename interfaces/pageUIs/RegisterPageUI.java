@@ -1,8 +1,6 @@
 package pageUIs;
 
-import commons.BasePage;
-
-public class RegisterPageUI extends BasePage{
+public class RegisterPageUI {
 
 	public static final String FIRST_NAME_TEXTBOX = "//input[@id= 'FirstName']";
 	public static final String LAST_NAME_TEXTBOX = "//input[@id= 'LastName']";
@@ -19,4 +17,3 @@ public class RegisterPageUI extends BasePage{
 	public static final String LOGIN_LINK = "//a[@class= 'ico-login']";
 	public static final String EXISTING_EMAIL_ERROR_MESSAGE = "//div[@class = 'message-error validation-summary-errors']//li";
 }
- 
