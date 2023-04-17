@@ -23,7 +23,7 @@ public class Level_04_Multiple_Browser extends BaseTest {
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		driver = getBrowserDriver(browserName);
-
+ 
 		homePage = new HomePageObject(driver);
 		InvalidEmail = "123abc.com";
 

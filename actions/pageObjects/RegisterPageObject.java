@@ -1,4 +1,4 @@
-package pageObjects;
+ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
@@ -30,7 +30,7 @@ public class RegisterPageObject extends BasePage {
 	}
 
 	public void inputToEmailTextbox(String emailAddress) {
-		waitForAllElementVisible(driver, RegisterPageUI.EMAIL_TEXTBOX);
+		waitForElementVisible(driver, RegisterPageUI.EMAIL_TEXTBOX);
 		senkeyToElement(driver, RegisterPageUI.EMAIL_TEXTBOX, emailAddress);
 	}
 
