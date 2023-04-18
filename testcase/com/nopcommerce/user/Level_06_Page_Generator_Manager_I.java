@@ -1,36 +1,29 @@
 package com.nopcommerce.user;
 
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import commons.BaseTest;
 import pageObjects.nopCommerce.HomePageObject;
 import pageObjects.nopCommerce.LoginPageObject;
 import pageObjects.nopCommerce.RegisterPageObject;
 
-public class Level_03_Page_Object_02_Login {
+public class Level_06_Page_Generator_Manager_I extends BaseTest {
 	private WebDriver driver;
 	private String existingEmail, InvalidEmail, notFoundEmail, firstName, lastName, password, incorrectPassword;
 	private HomePageObject homePage;
 	private RegisterPageObject registerPage;
 	private LoginPageObject loginPage;
-	private String projectPath = System.getProperty("user.dir");
 
+	@Parameters("browser")
 	@BeforeClass
-	public void beforeClass() {
-		System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
-
-		driver = new FirefoxDriver();
+	public void beforeClass(String browserName) {
+		driver = getBrowserDriver(browserName);
 		homePage = new HomePageObject(driver);
-
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.get("https://demo.nopcommerce.com/");
 
 		firstName = "Automation";
 		lastName = "FC";
@@ -125,10 +118,7 @@ public class Level_03_Page_Object_02_Login {
 
 	}
 
-	public int fakeNumber() {
-		Random rand = new Random();
-		return rand.nextInt(9999);
-	}
+
 
 	@AfterClass
 	public void afterClass() {
