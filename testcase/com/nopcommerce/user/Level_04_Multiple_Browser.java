@@ -10,21 +10,21 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.nopCommerce.HomePageObject;
-import pageObjects.nopCommerce.LoginPageObject;
+import pageObjects.nopCommerce.user.UserHomePageObject;
+import pageObjects.nopCommerce.user.UserLoginPageObject;
 
 public class Level_04_Multiple_Browser extends BaseTest {
 	private WebDriver driver;
 	private String InvalidEmail;
-	private HomePageObject homePage;
-	private LoginPageObject loginPage;
+	private UserHomePageObject homePage;
+	private UserLoginPageObject loginPage;
 
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		driver = getBrowserDriver(browserName);
  
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 		InvalidEmail = "123abc.com";
 
 	}
@@ -32,7 +32,7 @@ public class Level_04_Multiple_Browser extends BaseTest {
 	@Test
 	public void Login_01_Empty_Data() {
 		homePage.clickToLoginLink();
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		loginPage.clickToLoginButton();
 		Assert.assertEquals(loginPage.getErrorMessageAtEmailTextbox(), "Please enter your email");
 	}
@@ -40,7 +40,7 @@ public class Level_04_Multiple_Browser extends BaseTest {
 	@Test
 	public void Login_02_Invalid_Email() {
 		homePage.clickToLoginLink();
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		loginPage.inputToEmailTextbox(InvalidEmail);
 		loginPage.clickToLoginButton();
 		Assert.assertEquals(loginPage.getErrorMessageAtEmailTextbox(), "Wrong email");

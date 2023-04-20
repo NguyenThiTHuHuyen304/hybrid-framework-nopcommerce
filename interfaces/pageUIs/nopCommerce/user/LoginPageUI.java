@@ -1,4 +1,4 @@
-package pageUIs.nopCommerce;
+package pageUIs.nopCommerce.user;
 
 public class LoginPageUI {
 
@@ -7,4 +7,5 @@ public class LoginPageUI {
 	public static final String LOGIN_BUTTON = "//button[@class= 'button-1 login-button']";
 	public static final String EMAIL_ERROR_MESSAGE = "//span[@id= 'Email-error']";
 	public static final String UNSUCCESS_MESSAGE = "//div[@class= 'message-error validation-summary-errors']";
+	public static final String CONTINUE_BUTTON = "//a[text() = 'Continue']";
 }
