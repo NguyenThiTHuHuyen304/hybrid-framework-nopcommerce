@@ -8,4 +8,6 @@ public class BasePageUI {
 	public static final String REWARD_POINT_LINK = "xpath=//div[contains(@class, 'block-account-navigation')]//a[text() = 'Reward points']";
 	public static final String LOGOUT_LINK_ADMIN = "xpath=//a[text() = 'Logout']";
 	public static final String LOGOUT_LINK_USER = "css=a[class = 'ico-logout']";
+
+	public static final String DYNAMIC_PAGES_AT_MY_ACCOUNT_AREA = "xpath=//div[contains(@class, 'block-account-navigation')]//a[text() = '%s']";
 }
